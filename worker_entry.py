@@ -2,7 +2,7 @@
 init_models / generate / extract flow, verbatim minus gradio/spaces/progress
 plumbing. server.py is a thin HTTP shim over this module.
 
-Vendoring rationale (RFD 0040: "call the upstream entry point, do not
+Vendoring rationale (RFD66606-0040: "call the upstream entry point, do not
 reimplement the cascade"): app.py IS upstream's entry point for the
 latent-state + preview-render flow; a hand-rolled partial port (this repo's
 v0.2.0) missed the image-cond model init, MoGe camera estimation, and
@@ -67,7 +67,7 @@ IMAGE_COND_CONFIGS = {
 
 pipeline = None
 moge_model = None
-LOW_VRAM = os.environ.get("LOW_VRAM", "1") == "1"  # WEFTSPUN: default on (RFD 0027, 24GB tier)
+LOW_VRAM = os.environ.get("LOW_VRAM", "1") == "1"  # WEFTSPUN: default on (RFD66606-0027, 24GB tier)
 MODEL_PATH = os.environ.get("PIXAL3D_WEIGHTS", "TencentARC/Pixal3D")
 
 

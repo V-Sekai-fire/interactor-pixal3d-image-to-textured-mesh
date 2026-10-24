@@ -1,4 +1,4 @@
-# RFD 0040 details: the Docker test, measurement, format, interface, downloads
+# RFD66606-0040 details: the Docker test, measurement, format, interface, downloads
 
 ## Tested in Docker
 
@@ -82,7 +82,7 @@ dollars per hour on demand, and 0.13 interruptible.
 | low_vram   | bool  | true    |
 
 `fov` of -1.0 lets MoGe estimate the field of view. The output is not
-one file. RFD 0053 makes USD the internal format, thus `predict()`
+one file. RFD66606-0053 makes USD the internal format, thus `predict()`
 returns a layer beside the GLB.
 
 ## Three repositories download at build time
@@ -96,9 +96,9 @@ An instance is rented by the hour, thus that time is paid for.
 
 ## What this corrects
 
-- The license is MIT, and not unknown. RFD 0028 gates on that, and
+- The license is MIT, and not unknown. RFD66606-0028 gates on that, and
   Pixal3D clears the gate.
-- The count is 12.02 B, and not unknown. RFD 0026 carried one of two
+- The count is 12.02 B, and not unknown. RFD66606-0026 carried one of two
   unknown rows for this model.
-- The backbone is TRELLIS.2, per the upstream README. RFD 0038
+- The backbone is TRELLIS.2, per the upstream README. RFD66606-0038
   packages TRELLIS.2, thus these two model images share a lineage.

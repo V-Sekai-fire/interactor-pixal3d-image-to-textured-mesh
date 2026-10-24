@@ -17,7 +17,7 @@
 # and python 3.10. Reconstructing it is the work this file is waiting on. It is kept as the
 # record of nineteen measured fixes, not as a build that runs.
 
-# The base environment RFD 1028's image never installed, taken from upstream's own Space.
+# The base environment RFD66606-1028's image never installed, taken from upstream's own Space.
 #
 # WHAT THIS FILE USED TO BE, and why it is worth saying. It compiled four CUDA extensions
 # from git, one of them for thirty minutes, and it accumulated nineteen fixes discovered by

@@ -84,7 +84,7 @@ def main():
 
     t0 = time.time()
     # bnb 4-bit on the big components: the Space's recipe runs bf16 on
-    # 80GB cards; on the RTX 4090 tier (RFD 0027) the transformer alone
+    # 80GB cards; on the RTX 4090 tier (RFD66606-0027) the transformer alone
     # overflows 24GB, so quantization is our one documented divergence.
     from diffusers.quantizers import PipelineQuantizationConfig
 

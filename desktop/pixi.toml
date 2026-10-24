@@ -19,7 +19,7 @@
 
 # The Pixal3D stack as a declared environment, rather than a Docker image patched forwards.
 #
-# WHY NOT THE IMAGE. RFD 1028's container starts from Ubuntu 22.04 with pip 22.0.2, python
+# WHY NOT THE IMAGE. RFD66606-1028's container starts from Ubuntu 22.04 with pip 22.0.2, python
 # 3.10 and a torch pin nobody upstream asked for, and every fix so far has been dragging that
 # base forward one failure at a time: install python headers, install Eigen, install cmake,
 # upgrade pip because the old one silently installs modern projects as `UNKNOWN-0.0.0` and
@@ -72,7 +72,7 @@ no-build-isolation = ["cumesh", "flex-gemm", "o-voxel", "nvdiffrast"]
 # No version. FlexGEMM declares `triton>=3.2.0`, torch declares its own triton exactly, and
 # the solver puts those together without being told which torch that implies. Pinning 2.6.0
 # here would be repeating a derivation the solver already does, and repeating it is how it
-# goes stale -- RFD 1028's `torch==2.5.1` is what that looks like a year later.
+# goes stale -- RFD66606-1028's `torch==2.5.1` is what that looks like a year later.
 #
 # The lockfile is where the version lives. That is the whole trade: an unpinned manifest with
 # a lock is reproducible AND upgradable, where a pinned manifest with no lock is neither.
@@ -96,12 +96,12 @@ utils3d = { url = "https://github.com/LDYang694/Storages/releases/download/20260
 # 0.4.5 cannot open `ss_flow_img_dit_1_3B_64_bf16.safetensors`: `InvalidHeaderDeserialization`
 # on a file whose sha256 matches what Hugging Face publishes. 0.8.0 opens it and reads 701
 # tensors. So this bound is a run, not a preference, and it says the minimum rather than
-# freezing a version the way RFD 1028's `==0.4.5` did.
+# freezing a version the way RFD66606-1028's `==0.4.5` did.
 safetensors = ">=0.5"
 
 # Pixal3D's own requirements, from its requirements.txt at cdbb2bb. Note what is NOT here:
 # that file pins no torch, no safetensors, no huggingface_hub and no usd-core. Every one of
-# those pins in RFD 1028's Dockerfile was invented by our packaging, and two of them broke it
+# those pins in RFD66606-1028's Dockerfile was invented by our packaging, and two of them broke it
 # -- torch 2.5.1 brings a triton FlexGEMM cannot use, and safetensors 0.4.5 cannot open the
 # 1.3B checkpoint at all. Unpinned here means "whatever the solver picks", which is newer.
 #
@@ -141,7 +141,7 @@ plyfile = "==1.1.3"
 einops = "*"
 # huggingface_hub is NOT listed. `transformers==4.57.3` already requires
 # `huggingface-hub>=0.34.0,<1.0`, so stating it here would be copying somebody else's
-# constraint into a place it can drift from. RFD 1028 pinned 0.26.2 against that requirement
+# constraint into a place it can drift from. RFD66606-1028 pinned 0.26.2 against that requirement
 # and pip answered `ResolutionImpossible`, which is why that image never built at all.
 
 [tasks]
