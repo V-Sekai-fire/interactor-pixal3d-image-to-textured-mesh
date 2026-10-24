@@ -1,6 +1,6 @@
 # desktop: the local 3090 path
 
-The root `Dockerfile` builds the vast.ai worker RFD 0036 describes. This directory is the
+The root `Dockerfile` builds the vast.ai worker RFD66606-0036 describes. This directory is the
 other thing that was actually run: upstream's cascade on the desktop 4090/3090, driven by
 `inference.py` rather than through `server.py`, which is how the two sample meshes in
 `6-datasource/anny-render-corpus`'s corpus were produced.

@@ -6,7 +6,7 @@ A container image that serves an image-to-3D model which writes a textured mesh 
 
 It turns one image into a mesh in two requests: the first generates the model's latent with
 preview renders and their cameras, and the second decodes that latent to a mesh. A latent-space
-editor can take the first answer without a decode in between. RFD 1040 owns the packaging, and
+editor can take the first answer without a decode in between. RFD66606-1040 owns the packaging, and
 `DETAILS.md` carries its contract test.
 
 ## Build

@@ -1,8 +1,8 @@
-"""Pixal3D image to textured mesh, PBR. RFD 0040, extended with the
+"""Pixal3D image to textured mesh, PBR. RFD66606-0040, extended with the
 generate/extract latent flow upstream's own app.py ships.
 
 Thin HTTP shim over worker_entry.py, which vendors upstream app.py's
-init_models/generate/extract verbatim (RFD 0040: "call the upstream entry
+init_models/generate/extract verbatim (RFD66606-0040: "call the upstream entry
 point, do not reimplement the cascade" -- app.py IS upstream's entry point
 for the latent-state + preview-render flow).
 
@@ -19,7 +19,7 @@ adaptation pass backpropagates through.
 Environment: python 3.10 + torch 2.6 cu124 + upstream requirements-hfdemo.txt
 (prebuilt wheels: flash_attn_3, nvdiffrast, o_voxel, cumesh, flex_gemm).
 
-RFD 0053 makes OpenUSD the internal format, thus a result carries a USD
+RFD66606-0053 makes OpenUSD the internal format, thus a result carries a USD
 layer beside the GLB that ships.
 """
 
@@ -93,7 +93,7 @@ def _validate_extract(job_input: dict) -> dict:
 
 
 def _to_usd(glb: Path, work: Path) -> Path:
-    """Writes the base USD layer for this asset (RFD 0053). The GLB is an
+    """Writes the base USD layer for this asset (RFD66606-0053). The GLB is an
     asset-path attribute, not a `references` arc -- plain usd-core reads no
     glTF, and a reference would fail to resolve."""
     from pxr import Sdf, Usd, UsdGeom

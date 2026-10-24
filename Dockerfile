@@ -1,4 +1,4 @@
-# interactor-pixal3d-image-to-textured-mesh -- vast.ai worker, RFD 0036/0040.
+# interactor-pixal3d-image-to-textured-mesh -- vast.ai worker, RFD66606-0036/0040.
 #
 # Worker env contract: python 3.10 + torch 2.6 cu124 + upstream's
 # requirements-hfdemo.txt, which pins PREBUILT wheels for every heavy dep
